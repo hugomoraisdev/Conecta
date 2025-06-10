@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard Conecta</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="dashboard">
+
+    <div style="text-align: center;">
+      <img src="../Downloads/logo 8.png" alt="Logo da Conecta" width="300" />
+    </div>
+    <br>
+    <br>
+    <div class="indicadores">
+      <div class="indicador">
+        <span class="label">Meta Mensal de MRR</span>
+        <div class="progress"><div id="barraMeta" class="progress-bar"></div></div>
+        <strong id="valorMetaTexto">0%</strong>
+      </div>
+
+      <div class="indicador">
+        <span class="label">Ticket Médio Ideal (R$2.300,00)</span>
+        <div class="progress"><div id="barraTicket" class="progress-bar"></div></div>
+        <strong id="valorTicketTexto">R$0</strong>
+      </div>
+
+      <div class="indicador">
+        <span class="label">Taxa de Delay (meta:Abaixo de 50%)</span>
+        <div class="progress"><div id="barraDelay" class="progress-bar"></div></div>
+        <strong id="valorDelayTexto">0%</strong>
+      </div>
+
+      <div class="indicador">
+        <span class="label">Taxa de Conversão (meta: 50%)</span>
+        <div class="progress"><div id="barraConversao" class="progress-bar"></div></div>
+        <strong id="valorConversaoTexto">0%</strong>
+      </div>
+
+      <div class="indicador">
+        <span class="label">Reuniões Realizadas (meta: 60)</span>
+        <div class="progress"><div id="barraReunioes" class="progress-bar"></div></div>
+        <strong id="valorReunioesTexto">0%</strong>
+      </div>
+
+      <div class="indicador">
+        <span class="label">Leads Gerados (meta: 200)</span>
+        <div class="progress"><div id="barraLeads" class="progress-bar"></div></div>
+        <strong id="valorLeadsTexto">0%</strong>
+      </div>
+
+      <div class="indicador">
+        <span class="label">CPL (Custo por Lead - meta: R$15)</span>
+        <div class="progress"><div id="barraCPL" class="progress-bar"></div></div>
+        <strong id="valorCPLTexto">R$0</strong>
+      </div>
+
+      <div class="indicador">
+        <span class="label">CAC (Custo de Aquisição de Clientes)</span>
+        <div class="progress"><div id="barraCAC" class="progress-bar"></div></div>
+        <strong id="valorCACTexto">R$0</strong>
+      </div>
+
+      <div class="indicador">
+        <span class="label">ROI (Retorno sobre Investimento)</span>
+        <div class="progress"><div id="barraROI" class="progress-bar"></div></div>
+        <strong id="valorROITexto">0%</strong>
+      </div>
+      </div>
+
+    <div class="comparativos">
+      <div class="grafico-bloco">
+        <h3>Pré-Vendas</h3>
+        <canvas id="graficoPreVendas"></canvas>
+      </div>
+
+      <div class="grafico-bloco">
+        <h3>Vendas</h3>
+        <canvas id="graficoVendas"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
