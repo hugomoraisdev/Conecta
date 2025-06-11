@@ -13,7 +13,7 @@ const metaCAC = 1000; // ATUALIZADO: CAC ideal de R$ 1000
 
 // Meta para ROI (Retorno sobre Investimento) - Usado para a barra de progresso
 // Se não há uma meta definida, 200% é um bom valor de referência para a barra
-const metaROI = 200;
+const metaROI = 100;
 
 const dados = {
     mrrAtual: 3000,
@@ -153,10 +153,22 @@ function calcularCAC() {
 
 function calcularROI() {
     const receitaTotalGerada = receitaClienteROI * fidelidadeMesesROI;
-    if (investimentoROI > 0) {
-        return ((receitaTotalGerada - investimentoROI) / investimentoROI) * 100;
+
+    const investimentoTotal = dados.custoTotalMarketing + 
+        custosFixosMensais.read + 
+        custosFixosMensais.pipedrive +
+        custosFixosMensais.asaas + 
+        custosFixosMensais.chatGPT +
+        custosFixosMensais.canvaPro +
+        custosFixosMensais.cataCliente +
+        custosFixosMensais.salario_salesOps +
+        custosFixosMensais.salario_preVendas +
+        custosFixosMensais.salario_socialSeller;
+
+    if (investimentoTotal > 0) {
+        return ((receitaTotalGerada - investimentoTotal) / investimentoTotal) * 100;
     } else {
-        return 0; // Evita divisão por zero
+        return 0;
     }
 }
 
